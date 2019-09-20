@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Shadows+Into+Light&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" media="screen" href="style.css"/>
     <title>Document</title>
 </head>
-<body>
+<body  class="read">
 <table>
     
 <?php
@@ -21,19 +21,19 @@ if(!isset($_SESSION['login'])) {
 // On récupère nos variables de session
 if (isset($_SESSION['login'])) {
 
-	// On teste pour voir si nos variables ont bien été enregistrées
-	echo '<body>';
-	echo 'Bonjour '.$_SESSION['login'].'.';
+    // On teste pour voir si nos variables ont bien été enregistrées
+    echo "<p>";
+	echo 'Bonjour '.$_SESSION['login'];
 	echo '<br />';
 
 	// On affiche un lien pour fermer notre session
-	echo '<a href="./logout.php">Déconnection</a>';
+	echo '<a href="./logout.php">Déconnexion</a>';
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
 }
 
-echo '    <h1>Liste des rendonnées</h1>';
+echo '    <h1>Liste des randonnées</h1>';
 
 // On se connecte à MySQL
 $bdd = new PDO('mysql:host=localhost;dbname=reunion_island;charset=utf8;', 'root', 'password');
@@ -52,9 +52,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=reunion_island;charset=utf8;', 'root
         {     
         echo "<tr>";
             echo   "<td>" .$donnees['name']. "</br>
-            <button><a href='update.php?index="
+            <button class='mod'><a href='update.php?index="
             .$donnees['id']."'> Modifier</a></button>
-            <button><a href='delete.php?index="
+            <button class='mod'><a href='delete.php?index="
             .$donnees['id']."'> Supprimer</a></button></td>";
             echo   "<td>" .$donnees['difficulty']."</td>";
             echo   "<td>".$donnees['distance']." m </td>";

@@ -48,21 +48,26 @@ if (isset($_POST['button'])){
 <head>
 	<meta charset="utf-8">
 	<title>Ajouter une randonnée</title>
-	<link rel="stylesheet" href="css/basics.css" media="screen" title="no title" charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Shadows+Into+Light&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" media="screen" href="style.css"/>
 </head>
 <body>
 	<div class="up">
 	<h1>Modifier</h1>
+	<div id="conteneur offset-3">
+
 	<form action="" method="post">
-		<div>
-			<label for="name">Name</label>
-			<input type="text" name="name" value="<?php echo $name?>">
-		</div>
-	
-		<div>
-			<label for="difficulty">Difficulté</label>
-			<select value="" name="difficulty">
-				<?php 
+  <div class="form-row">
+    <div class="form-group col-md-3 offset-3">
+	  <label for="name">Nom</label>
+	  
+      <input name="name" class="form-control" id="inputEmail4" value="<?php echo $name?>">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="difficulty">Difficulté</label>
+	  <select name="difficulty" id="inputState" class="form-control">
+	  <?php 
 				$arr = array('très facile','facile','moyen','difficile','très difficile');
 				foreach($arr as $value){
 					$select="";
@@ -73,24 +78,24 @@ if (isset($_POST['button'])){
 				}
 			?>
 			</select>
-		
-		</div>
-		
-		<div>
-			<label for="distance">Distance</label>
-			<input type="text" name="distance" value="<?php echo $distance?>">
-		</div>
-		<div>
-			<label for="duration">Durée</label>
-			<input type="duration" name="duration" value="<?php echo $duration?>">
-		</div>
-		<div>
-			<label for="height_difference">Dénivelé</label>
-			<input type="text" name="height_difference" value="<?php echo $height_difference?>">
-		</div>
-		<div>
-			<label for="available">Available</label>
-			<select value="" name="available">
+	</div>
+			</div>
+			<div class="form-row">
+    <div class="form-group col-md-2 offset-2">
+      <label for="distance">Distance</label>
+      <input name="distance" type="text" class="form-control" id="inputCity"value="<?php echo $distance?>">
+	</div>
+    <div class="form-group col-md-2">
+      <label for="duration">Durée</label>
+      <input name="duration" type="text" class="form-control" id="inputCity"value="<?php echo $duration?>" >
+    </div>
+	<div class="form-group col-md-2">
+    <label  for="height_difference">Dénivelé</label>
+    <input name="height_difference" type="text" class="form-control" id="inputAddress"value="<?php echo $height_difference?>">
+  </div>
+  <div class="form-group col-md-2">
+      <label for="available">Available</label>
+      <select name="available" id="inputState" class="form-control" name="available">>
 				<?php
 			$arr = array('oui','non');
 				foreach($arr as $value){
@@ -103,10 +108,15 @@ if (isset($_POST['button'])){
 			}
 		?>
 		</select>
-				</div>
-		<button type="submit" name="button"value="valider" name="valider">Envoyer</button>
-	</form>
-	<a href="read.php">Liste des données</a>
-	</div>
+		</div>
+		</div>
+		<button class="offset-5" type="submit" name="button"value="valider" name="valider">Envoyer</button>
+		<button><a href="read.php">Liste des données</a></button>	
+		</form>
+		
+
+
+		</div>
+	
 </body>
 </html>

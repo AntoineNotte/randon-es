@@ -2,17 +2,22 @@ table{
     border-style:solid;
     margin:auto;
     margin-top:5%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
   
 }
  td{
-    border-style: solid;
+    border-top-style: solid;
+    border-right:solid;
     font-weight: bold;
     text-align:center;
 }
 th{
-    border-style:solid;
+    border-right-style:solid;
+    font-size: 22px;
+    font-family: 'Abril Fatface', cursive;
+    margin-top: 30%;
 } 
+
 h1{
     text-align:center;
     margin-top:5%;
@@ -30,6 +35,10 @@ h1{
     background-color: rgba(255, 255, 255, 0.3);
   
 }
+.up{
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top:10%;
+}
 .connection{
     text-align:right;
     margin-right:2%;
@@ -42,7 +51,7 @@ h1{
     margin-left:2%;
 }
 body{
-    background-image: url(rando.jpeg);
+    background-image: url(rando.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -67,4 +76,25 @@ input{
 .insc{
     margin-top:3%;
     margin-left:20%;
+}
+p{
+    font-size: 22px;
+}
+.read{
+    background-image: url(rando.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.mod{
+    margin-top:5%;
+}
+.name{
+    margin-top:8%;
+}
+label{
+    font-weight:bold;
+    font-size: 22px;
+    margin-top:10%;
+
 }
